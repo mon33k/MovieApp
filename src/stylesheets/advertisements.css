@@ -1,0 +1,17 @@
+div {
+    color: white;
+}
+
+.ad-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    width: 1278px;
+    height: 350px;
+    border: white solid 1px;
+    background-color: grey;
+    justify-content: center;
+    margin: 10px;
+    padding: 0;
+}
