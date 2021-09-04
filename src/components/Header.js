@@ -1,11 +1,22 @@
 import React from "react";
+import {Container, Row, Col} from "react-bootstrap"
+import Search from "./Search"
 
 const Navbar = () => (
     <>
-        <div>Menu</div>
-        <div>Logo</div>
-        <div>search</div>
-        <div>Sign in</div>
+        <Container>
+            <Row>
+                <Col>Menu</Col>
+                <Col>Logo</Col>
+                <Col>
+                    <Search/>
+                </Col>
+            </Row>
+
+        </Container>
+     
+
+
     </>
 )
 
