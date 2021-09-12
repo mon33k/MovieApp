@@ -61,10 +61,13 @@ class Search extends React.Component {
 
     render() {
         return (
+        <>
             <Form onSubmit={this.handleSubmit}>
                 <Form.Control type="text" placeholder="Search for Movie" value={this.state.searchedMovie} onChange={this.handleSearchBar} />
-                {this.state.movieDataArr.length > 0 ? <DisplayMovieList data={this.state.movieDataArr} /> : " "}
+               
             </Form>
+            {this.state.movieDataArr.length > 0 ? <DisplayMovieList data={this.state.movieDataArr} /> : " "}
+        </>
         )
     }
 

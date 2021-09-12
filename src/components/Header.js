@@ -2,7 +2,7 @@ import React from "react";
 import {Container, Row, Col} from "react-bootstrap"
 import Search from "./Search"
 
-const Navbar = () => (
+const Header = () => (
     <>
         <Container>
             <Row>
@@ -20,4 +20,4 @@ const Navbar = () => (
     </>
 )
 
-export default Navbar
+export default Header

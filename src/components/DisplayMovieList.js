@@ -1,13 +1,18 @@
 import React from "react"
+import "../stylesheets/displayMovieList.css"
 
 function DisplayMovieList (data) {
     console.log('just wanna check it even goes here')
-    console.log(data)
+    console.log(data.data)
    // console.log(peepee)
 
 
     return(
-        <div>LOOK AT MEEEEEE</div>
+        <div class="datalist">
+            {data.data ? data.data.map(e => (
+                <div key={e["id"]}>{e["original_title"]}</div>
+            )) : " "}
+        </div>
     )
 }
 

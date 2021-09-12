@@ -3,7 +3,7 @@ import Header from "./components/Header";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Advertisement from "./components/Advertisement"
+// import Advertisement from "./components/Advertisement"
 // import FeaturedOverlay from "./components/FeaturedOverlay"
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <Header/>
       </header>
       <div className="main-content">
-          <Advertisement/>
+          {/* <Advertisement/> */}
           {/* <FeaturedOverlay/> */}
           <div>More stuff to add but starting w this first</div>
       </div>
