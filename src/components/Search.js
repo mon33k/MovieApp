@@ -1,6 +1,6 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
-import DisplayMovieList from "./DisplayMovieList";
+// import DisplayMovieList from "./DisplayMovieList";
 // import DisplayMovieList from "./DisplayMovieList"
 // Get user input for movie title 
 //User input is then put into the api call and json is going to have a movie id
@@ -35,11 +35,7 @@ class Search extends React.Component {
                 .then(res => res.json())
                 .then((data) => {
                     if(data.results) {
-
-                        console.log("Search component props ", this.props.getData)
-
                         this.props.getData(data.results)
-                         
                     } 
                 })
                 .catch(err => console.log(err))

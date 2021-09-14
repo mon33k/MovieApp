@@ -1,3 +1,19 @@
 .datalist {
-    border: 1px white solid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 10px;
 }
+
+.eachMovie{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin: 20px;
+}
+
+img {max-width:100%;}

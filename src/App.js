@@ -1,5 +1,5 @@
 import './App.css';
-import { Switch, Route } from 'react-router-dom'
+// import { Switch, Route } from 'react-router-dom'
 import Header from "./components/Header";
 import Main from "./components/Main";
 import React from 'react';
@@ -25,16 +25,9 @@ getAllMovieData = (data) => {
     })
 }
 
-componentDidMount() {
-
-}
 
   render() {
-    // const { movieDataArr } = this.state
-    // console.log("in app render", this.state.movieDataArr )
-    // if(this.state.movieDataArr != null  && this.state.movieDataArr.length > 0)  {
-    //   console.log(this.state.movieDataArr )
-    // }
+
     return (
       <div className="App">
         <header className="App-header">
