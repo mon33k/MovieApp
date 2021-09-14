@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
+import {withRouter} from "react-router-dom" 
 // import DisplayMovieList from "./DisplayMovieList";
 // import DisplayMovieList from "./DisplayMovieList"
 // Get user input for movie title 
@@ -25,6 +26,7 @@ class Search extends React.Component {
         e.preventDefault()
         // This is where you will call your function that takes the user input as a query for the api call
         this.getSearchedMovie()
+        
     }
 
     getSearchedMovie = () => {
@@ -36,7 +38,9 @@ class Search extends React.Component {
                 .then((data) => {
                     if(data.results) {
                         this.props.getData(data.results)
+                        this.props.history.push("/displayall") // needed to use withRouter from react-router-dom 
                     } 
+                   
                 })
                 .catch(err => console.log(err))
         } 
@@ -45,6 +49,7 @@ class Search extends React.Component {
     
 
     componentDidMount() {
+    
     }
 
 
@@ -54,7 +59,7 @@ class Search extends React.Component {
         <>
             <Form onSubmit={this.handleSubmit}>
                 <Form.Control type="text" placeholder="Search for Movie" value={this.state.searchedMovie} onChange={this.handleSearchBar} />
-               
+                
             </Form>
             {/* {this.state.movieDataArr.length > 0 ? <DisplayMovieList data={this.state.movieDataArr} /> : " "} */}
         </>
@@ -63,4 +68,4 @@ class Search extends React.Component {
 
 }
 
-export default Search
+export default withRouter(Search)
