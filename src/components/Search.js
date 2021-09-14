@@ -12,11 +12,8 @@ class Search extends React.Component {
         super()
         this.state = {
             searchedMovie: " ",
-            movieDataArr: []
         }
     }
-
-
 
     handleSearchBar = (e) => {
         this.setState({
@@ -38,35 +35,32 @@ class Search extends React.Component {
                 .then(res => res.json())
                 .then((data) => {
                     if(data.results) {
-                       // const results = data.results
-                       // console.log("this one", data.results)
-                        //return <DisplayMovieList props={"some random text"} />  
 
-                        
-                        this.setState({
-                            movieDataArr: data.results
-                        })
-                    }
+                        console.log("Search component props ", this.props.getData)
+
+                        this.props.getData(data.results)
+                         
+                    } 
                 })
                 .catch(err => console.log(err))
-        }
+        } 
     }
 
     
 
     componentDidMount() {
-        console.log(this.state.movieDataArr)
     }
 
 
     render() {
+        // console.log('render ',this.state.movieDataArr)
         return (
         <>
             <Form onSubmit={this.handleSubmit}>
                 <Form.Control type="text" placeholder="Search for Movie" value={this.state.searchedMovie} onChange={this.handleSearchBar} />
                
             </Form>
-            {this.state.movieDataArr.length > 0 ? <DisplayMovieList data={this.state.movieDataArr} /> : " "}
+            {/* {this.state.movieDataArr.length > 0 ? <DisplayMovieList data={this.state.movieDataArr} /> : " "} */}
         </>
         )
     }

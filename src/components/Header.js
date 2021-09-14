@@ -2,14 +2,16 @@ import React from "react";
 import {Container, Row, Col} from "react-bootstrap"
 import Search from "./Search"
 
-const Header = () => (
-    <>
+const Header = ({getData}) => {
+
+    // console.log("props in header ", getData)
+    return (<>
         <Container>
             <Row>
                 <Col>Menu</Col>
                 <Col>Logo</Col>
                 <Col>
-                    <Search/>
+                    <Search getData={getData}/>
                 </Col>
             </Row>
 
@@ -17,7 +19,7 @@ const Header = () => (
      
 
 
-    </>
-)
+    </>)
+}
 
 export default Header

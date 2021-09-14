@@ -8,7 +8,7 @@ function DisplayMovieList (data) {
 
 
     return(
-        <div class="datalist">
+        <div className="datalist">
             {data.data ? data.data.map(e => (
                 <div key={e["id"]}>{e["original_title"]}</div>
             )) : " "}
