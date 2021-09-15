@@ -42,23 +42,6 @@ class Search extends React.Component {
             ))
                 .catch(error => console.log(`Error in promises ${error}`))
 
-
-
-
-
-
-            // fetch(`https://api.themoviedb.org/3/search/movie?api_key=2915ebad2c3b22b57b07f08729360d20&query=${encodedQueryStr}`)
-            //     .then(res => res.json())
-            //     .then((data) => {
-            //         if (data.results) {
-            //             this.props.getData(data.results)
-            //             this.props.history.push(`/search/${encodedQueryStr}`) // needed to use withRouter from react-router-dom 
-            //         }
-
-            //     })
-            //     .catch(err => console.log(err))
-
-
         }
     }
 

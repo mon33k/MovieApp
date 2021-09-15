@@ -3,6 +3,7 @@ import {Switch, Route, Redirect} from "react-router-dom"
 import DisplayMovieList from "./DisplayMovieList";
 import MoviePage from "./MoviePage"
 import LandingPage from "./LandingPage"
+import PersonPage from "./PersonPage"
 
 class Main extends React.Component {
 //    constructor(props){
@@ -24,6 +25,7 @@ class Main extends React.Component {
                         <DisplayMovieList data={this.props.movieData} />
                     </Route>
                     <Route path="/movie/:id" component={MoviePage}/> 
+                    <Route path="/actor/:id" component={PersonPage} />
                     <Route exact path="/">
                         <LandingPage/>
                     </Route>
