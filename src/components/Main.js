@@ -5,35 +5,25 @@ import MoviePage from "./MoviePage"
 import LandingPage from "./LandingPage"
 
 class Main extends React.Component {
-   constructor(props){
-        super(props)
-        this.handleClickImage = this.handleClickImage.bind(this)
-    }
-    
-    handleClickImage = (movie) => {
-        //console.log("movie in main ", `/movie/${movie.id}`)
-       return(
-            <MoviePage props={movie}/>
-        ) 
-           
-        
-    }
+//    constructor(props){
+//         super(props)
+//         this.handleClickImage = this.handleClickImage.bind(this)
+//     }
+  
 
 
 
     render(){
-
-        // console.log("props in Main", this.props.movieData)
-        // Having trouble displaying  component and changing url 
+        // props need to be structred better from App.js because its replacing the value for movieData when search returns multiple datas 
+        console.log("should see all query results here ", this.props)
+        // Find out why the component would only render if I had it in that format line 24
         return(
             <div>
                 <Switch>
-                    <Route path="/displayall">
-                        <DisplayMovieList data={this.props.movieData} handleClickImg={this.handleClickImage}/>
+                    <Route path="/search/:query">
+                        <DisplayMovieList data={this.props.movieData} />
                     </Route>
-                    <Route path="/movie/:id">
-                        <MoviePage/>
-                    </Route>
+                    <Route path="/movie/:id" component={MoviePage}/> 
                     <Route exact path="/">
                         <LandingPage/>
                     </Route>
@@ -45,3 +35,8 @@ class Main extends React.Component {
 }
 
 export default Main
+
+
+// <Route path="/movie/:id">
+// <MoviePage />
+// </Route>
