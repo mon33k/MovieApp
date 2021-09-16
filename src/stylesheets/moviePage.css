@@ -1,6 +1,7 @@
 .moviePage-container {
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
+    width: 80vw;
 }
 
 .movie-image {

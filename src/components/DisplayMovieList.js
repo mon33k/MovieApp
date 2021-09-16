@@ -18,40 +18,19 @@ class DisplayMovieList extends React.Component {
 
     handleClick(e, data) {
         e.preventDefault()
-        this.props.getClickedItem(data)
         if(data.media_type === "person") {
+            this.props.getClickedItem(data)
             this.props.history.push(`/actor/${e.target.id}`, { state: { movieData: data }});
         } else if(data.media_type === "movie") {
+            this.props.getClickedItem(data)
             this.props.history.push(`/movie/${e.target.id}`, { state: { movieData: data }});
         }
 
-        // let requestPassed = Boolean
-        // // console.log('e ==> ', e.target.id)
-        // fetch(`https://api.themoviedb.org/3/movie/${e.target.id}?api_key=2915ebad2c3b22b57b07f08729360d20&append_to_response=videos,images`)
-        // .then(response => response.json())
-        // .then(data => {
-        //     // console.log('data details ✨', data)
-        //     requestPassed  = true
-        //     this.props.history.push(`/movie/${e.target.id}`, { state: { movieData: data }}); 
-        // })
-        // .catch(err => 
-        //     requestPassed = err.success
-        // )
-
-        // if(!requestPassed){
-        //     fetch(`https://api.themoviedb.org/3/person/${e.target.id}/combined_credits?api_key=2915ebad2c3b22b57b07f08729360d20`)
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         requestPassed = true
-        //         this.props.history.push(`/actor/${e.target.id}`, { state: { movieData: data }}); 
-        //     })
-        //     .catch(err => console.log('actor req failed', err))
-        // }
     }
 
     render() {
         const { data } = this.props
-        // console.log("render movie list details ", data)
+
         return (
             <div className="datalist">
                 {data ? data.map(movie => (

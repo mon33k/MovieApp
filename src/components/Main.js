@@ -12,9 +12,13 @@ class Main extends React.Component {
 //     }
     getActorClicked = () => {
         if(this.props.itemClicked) {
-            console.log(this.props.itemClicked)
+            console.log("inside App.js ", this.props.itemClicked)
         }
     }
+
+    // getMovieClicked = () => {
+    //     this.props.
+    // }
 
 
 

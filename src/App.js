@@ -5,7 +5,7 @@ import React from 'react';
 // import LandingPage from './components/LandingPage';
 // import DisplayMovieList from "./components/DisplayMovieList";
 // import MoviePage from "./components/MoviePage"
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 // import Advertisement from "./components/Advertisement"
