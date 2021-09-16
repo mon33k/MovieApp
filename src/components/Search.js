@@ -26,7 +26,7 @@ class Search extends React.Component {
             const encodedQueryStr = this.state.searchQuery.split(" ").filter(word => word.length > 0).join('+')
             const urls = {
                 getMulti: `https://api.themoviedb.org/3/search/multi?api_key=2915ebad2c3b22b57b07f08729360d20&query=${encodedQueryStr}`,
-                getMovie: `https://api.themoviedb.org/3/search/movie?api_key=2915ebad2c3b22b57b07f08729360d20&query=${encodedQueryStr}`
+                // getMovie: `https://api.themoviedb.org/3/search/movie?api_key=2915ebad2c3b22b57b07f08729360d20&query=${encodedQueryStr}`
             }
             
             Promise.all(Object.keys(urls).map((key) =>
@@ -40,7 +40,7 @@ class Search extends React.Component {
                         }
                     )
             ))
-                .catch(error => console.log(`Error in promises ${error}`))
+                .catch(error => console.log(`Error in promises ${error}`)) 
 
         }
     }

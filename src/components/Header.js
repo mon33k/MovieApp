@@ -16,7 +16,6 @@ const Header = ({getData, movieData}) => {
             </Row>
 
         </Container>
-     
 
 
     </>)

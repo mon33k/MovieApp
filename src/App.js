@@ -15,7 +15,8 @@ class App extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
-        movieDataArr: null
+        movieDataArr: null,
+        clickedItem: null,
     }
   }
 
@@ -23,6 +24,12 @@ class App extends React.Component{
 getAllMovieData = (data) => {
     this.setState({
         movieDataArr: [...data]
+    })
+}
+
+getClickedItem = (data) => {
+    this.setState({
+      clickedItem: data
     })
 }
 
@@ -35,12 +42,11 @@ getAllMovieData = (data) => {
           <Header getData={this.getAllMovieData} />
         </header>
         <div className="main-content">
-              <Main movieData={this.state.movieDataArr}/>
+              <Main movieData={this.state.movieDataArr} getClickedItem={this.getClickedItem} clickedItem={this.state.clickedItem}/>
         </div>
       </div>
     );
   }
- 
 }
 
 export default App;

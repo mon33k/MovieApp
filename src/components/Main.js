@@ -10,26 +10,29 @@ class Main extends React.Component {
 //         super(props)
 //         this.handleClickImage = this.handleClickImage.bind(this)
 //     }
-  
+    getActorClicked = () => {
+        if(this.props.itemClicked) {
+            console.log(this.props.itemClicked)
+        }
+    }
+
 
 
 
     render(){
         // props need to be structred better from App.js because its replacing the value for movieData when search returns multiple datas 
-        console.log("should see all query results here ", this.props)
+        console.log("props in main ", this.props)
         // Find out why the component would only render if I had it in that format line 24
         return(
             <div>
                 <Switch>
                     <Route path="/search/:query">
-                        <DisplayMovieList data={this.props.movieData} />
+                        <DisplayMovieList data={this.props.movieData} getClickedItem={this.props.getClickedItem} />
                     </Route>
-                    <Route path="/movie/:id" component={MoviePage}/> 
-                    <Route path="/actor/:id" component={PersonPage} />
-                    <Route exact path="/">
-                        <LandingPage/>
-                    </Route>
-
+                    <Route path="/movie/:id" component={MoviePage} clickedItem={this.props.clickedItem != null ? this.props.clickedItem : ""} /> 
+                    <Route path="/actor/:id" component={PersonPage} clickedItem={this.props.clickedItem != null ? this.props.clickedItem : ""} />
+                    <Route exact path="/" component={LandingPage}/>
+                        
                 </Switch>
             </div>
         )
@@ -38,7 +41,3 @@ class Main extends React.Component {
 
 export default Main
 
-
-// <Route path="/movie/:id">
-// <MoviePage />
-// </Route>
