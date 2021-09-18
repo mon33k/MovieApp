@@ -1,5 +1,6 @@
 nav {
-    justify-content: center !important;
+    /* justify-content: center !important; */
+    background: #000;
 }
 
 nav .navbar-collapse {
@@ -7,13 +8,18 @@ nav .navbar-collapse {
     top: 56px;
     background: #343a40;
     /* right: -100%; */
-    width: 10vw;
+    width: 30vw;
     height: inherit;
     display: block;
     transition: 0.3s ease;
     }
 
 
-    nav .navbar-collapse.show {
-        left: 0;
+nav .navbar-collapse.show {
+        left: auto;
     }
+
+.header-logo {
+    width: 10vw;
+
+}

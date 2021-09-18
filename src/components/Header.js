@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Navbar, NavDropdown, Nav } from "react-bootstrap"
 import Search from "./Search"
 import "../stylesheets/header.css"
-
+import HeaderLogo from "../stylesheets/logo/The_Movie_Source.svg"
 
 const Header = ({ getData }) => {
 
@@ -34,8 +34,8 @@ const Header = ({ getData }) => {
                         </Nav.Link>
                     </Nav> */}
                 </Navbar.Collapse>
-                <Navbar.Brand href="#home">
-                LOGO
+                <Navbar.Brand href="/">
+                    <img src={HeaderLogo} alt="film logo" className="header-logo" />
                 </Navbar.Brand>
                 <Search getData={getData} />
                 
