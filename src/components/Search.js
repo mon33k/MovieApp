@@ -1,12 +1,14 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import { withRouter } from "react-router-dom"
+import {Button, Col, Row} from "react-bootstrap"
+import "../stylesheets/header.css"
 
 class Search extends React.Component {
     constructor() {
         super()
         this.state = {
-            searchQuery: " "
+            searchQuery: ""
         }
     }
 
@@ -16,7 +18,7 @@ class Search extends React.Component {
         })
     }
 
-    handleSubmit = (e) => {
+    handleClick = (e) => {
         e.preventDefault()
         this.getUserSearchQuery()
     }
@@ -53,11 +55,14 @@ class Search extends React.Component {
 
     render() {
         return (
-            <>
-                <Form onSubmit={this.handleSubmit}>
-                    <Form.Control type="text" placeholder="Search for Movie" value={this.state.searchQuery} onChange={this.handleSearchBar} />
-                </Form>
-            </>
+            <Row>
+                <Col>
+                    <Form className="search-bar" onSubmit={this.handleClick}>
+                        <Form.Control type="text" placeholder="Search for a Movie, TV Show or Actor" value={this.state.searchQuery} onChange={this.handleSearchBar} />
+                        <Button onClick={this.handleClick} variant="secondary">Submit</Button>
+                    </Form>
+                </Col>
+            </Row>
         )
     }
 

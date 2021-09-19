@@ -1,14 +1,17 @@
 nav {
     /* justify-content: center !important; */
     background: #000;
+      /* align-items: center; */
 }
 
 nav .navbar-collapse {
+    color: white;
     position: fixed;
     top: 56px;
-    background: #343a40;
+    background: #181a1d;
+    /* opacity: 0.5; */
     /* right: -100%; */
-    width: 30vw;
+    width: 20vw;
     height: inherit;
     display: block;
     transition: 0.3s ease;
@@ -16,10 +19,18 @@ nav .navbar-collapse {
 
 
 nav .navbar-collapse.show {
+        margin-top: 60px;;
         left: auto;
     }
 
 .header-logo {
-    width: 10vw;
+    /* display: block; */
+    width: 8vw;
 
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
 }
