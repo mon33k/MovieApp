@@ -1,13 +1,25 @@
 import React from "react";
 import {Container, Row, Col} from "react-bootstrap"
+import DisplayMovieList from "./DisplayMovieList";
+import DisplayMovieSlider from "./DisplayMovieSlider";
 
 class LandingPage extends React.Component {
+    constructor() {
+        super()
+        this.state ={
+            popular: [],
+            upcoming: [],
+            topRated: [],
+        }
+    }
 
     getPopularMovies() {
         fetch("https://api.themoviedb.org/3/movie/popular?api_key=2915ebad2c3b22b57b07f08729360d20&language=en-US&page=1")
         .then(res => res.json())
         .then(data => {
-            console.log("popular ", data)
+            this.setState({
+                popular: data.results
+            })
         })
     }
 
@@ -15,7 +27,9 @@ class LandingPage extends React.Component {
         fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=2915ebad2c3b22b57b07f08729360d20&language=en-US&page=1")
         .then(res => res.json())
         .then(data => {
-            console.log("top-rated ", data)
+            this.setState({
+                topRated: data.results
+            })
         })
     }
 
@@ -23,7 +37,9 @@ class LandingPage extends React.Component {
         fetch("https://api.themoviedb.org/3/movie/upcoming?api_key=2915ebad2c3b22b57b07f08729360d20&language=en-US&page=1")
         .then(res => res.json())
         .then(data => {
-            console.log("upcoming", data)
+            this.setState({
+                upcoming: data.results
+            })
         })
     }
 
@@ -38,13 +54,22 @@ class LandingPage extends React.Component {
         return(
             <Container>
                 <Row>
-                    <Col></Col>
+                    <Col> 
+                    <h1>Popular:</h1> 
+                        <DisplayMovieSlider data={this.state.popular} />
+                    </Col>
                 </Row>
                 <Row>
-                    <Col></Col>
+                    <Col>
+                    <h1>Top Rated</h1> 
+                        <DisplayMovieSlider data={this.state.topRated} />
+                    </Col>
                 </Row>
                 <Row>
-                    <Col></Col>
+                    <Col>
+                    <h1>Upcoming</h1> 
+                        <DisplayMovieSlider data={this.state.upcoming} />
+                    </Col>
                 </Row>
             </Container>
         )
@@ -52,3 +77,5 @@ class LandingPage extends React.Component {
 }
 
 export default LandingPage
+
+
